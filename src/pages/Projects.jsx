@@ -13,6 +13,15 @@ const projects = [
     githubLink: "https://github.com/mahatab6/GreenMind",
     liveLink: "https://plant-care-60.netlify.app/",
   },
+  {
+    title: "EduHub!",
+    description:
+      "EduHub – Digital Course Selling Platform EduHub is a full-stack digital course marketplace designed for seamless enrollment, course browsing, and learning. With modern UI components, robust backend APIs, and responsive design, EduHub provides an intuitive platform for both learners and admins.",
+    link: "https://i.ibb.co/fVfNShfY/image.png",
+    color: "#FF850A",
+    githubLink: "https://github.com/mahatab6/EduHub",
+    liveLink: "https://eduhub-17199.netlify.app/",
+  },
   
   
  
