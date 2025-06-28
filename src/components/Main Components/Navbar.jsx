@@ -21,16 +21,6 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to='/experience' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
-                <FaBriefcase /> Experience
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/education' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
-                <FaGraduationCap /> Education
-                </NavLink>
-            </li>
-            <li>
                 <NavLink to='/projects' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <FaProjectDiagram /> Projects
                 </NavLink>
