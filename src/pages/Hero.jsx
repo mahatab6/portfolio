@@ -64,33 +64,33 @@ const Hero = () => {
             {/* Social Icons */}
             <div className="flex flex-1 space-x-2">
                 <Link
-                to="https://facebook.com/yourusername"
+                to="https://www.facebook.com/mahatab156"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaFacebookF size={25} />
                 </Link>
                 <Link
-                to="https://github.com/yourusername"
+                to="https://github.com/mahatab6"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaGithub size={25} />
                 </Link>
                 <Link
-                to="https://wa.me/yourphonenumber"
+                to="https://wa.me/+8801743643156"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaWhatsapp size={25} />
                 </Link>
-                <Link
-                to="https://linkedin.com/in/yourusername"
+                {/* <Link
+                to=""
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaLinkedinIn size={25} />
-                </Link>
+                </Link> */}
             </div>
 
             <div className="flex flex-1 justify-center mt-3 gap-1 px-5">
