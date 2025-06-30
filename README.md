@@ -54,7 +54,6 @@ Welcome to my developer portfolio, a modern, fully responsive, and animated webs
 
 
 🗂️ Project Structure
-
 src/
 ├── assets/                  # Images, logos, static files
 ├── components/              # Reusable and layout components
