@@ -96,7 +96,7 @@ const Hero = () => {
             <div className="flex flex-1 justify-center mt-3 gap-1 px-5">
                 <Link
                 download
-                to="/path/to/your/resume.pdf"
+                to="https://drive.google.com/file/d/1Ko_fpzocebAY_RaHFoXkzEiUp2oG86Gc/view?usp=sharing"
                 target="_blank"
                 className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
                 >

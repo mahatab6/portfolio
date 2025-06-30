@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Send, Phone, MapPin, Mail } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 
 export default function Contact() {
@@ -87,8 +88,11 @@ export default function Contact() {
   return (
     <main
       className="pt-10 lg:pt-[0rem] bg-[#0F172A]
- text-white min-h-screen"
+     text-white min-h-screen"
     >
+      <Helmet>
+        <title>Contact | Mahatab</title>
+      </Helmet>
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="w-2xl mx-auto">
           <div className="">

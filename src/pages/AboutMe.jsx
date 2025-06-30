@@ -32,7 +32,7 @@ const AboutMe = () => {
               <div>
                 <p className='text-4xl font-bold text-gray-200 mb-8'>Education</p>
                 <div>
-                  <h2 className='text-xl font-bold text-green-500 flex items-center gap-1'><GoDotFill /> Higher Secondary School</h2>
+                  <h2 className='text-xl font-bold text-green-500 flex items-center gap-1'><GoDotFill /> Secondary School</h2>
                   <div className='px-5'>
                     <p className='text-base font-semibold '>2019 - 2021</p>
                     <p className='text-base font-semibold '>Konabari M A Kuddus High School</p>

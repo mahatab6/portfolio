@@ -2,6 +2,7 @@ import React from "react";
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode, FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiFirebase, SiMongodb, SiVite, SiExpress } from "react-icons/si";
 import { PiBracketsCurlyDuotone } from "react-icons/pi";
+import { Helmet } from "react-helmet";
 
 const skills = [
   {
@@ -69,6 +70,9 @@ const skills = [
 const SkillsGrid = () => {
   return (
     <div className="py-10 px-5 bg-[#0F172A] h-screen-full">
+      <Helmet>
+        <title>Skills | Mahatab</title>
+      </Helmet>
       <h1 className="text-4xl font-bold text-green-400 text-center mb-10">My Skills</h1>
       
       <div className="w-9/12 mx-auto lg:py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">

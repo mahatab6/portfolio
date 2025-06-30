@@ -2,6 +2,7 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -124,6 +125,9 @@ function Card({
       ref={container}
       className="h-screen flex items-center justify-center sticky top-0 project-container"
     >
+      <Helmet>
+        <title>Projects | Mahatab</title>
+      </Helmet>
       <motion.div
         style={{
           scale,

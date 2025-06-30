@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../Reusable Components/Logo';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { AiFillHome } from 'react-icons/ai';
 import { FaTools, FaBriefcase, FaGraduationCap, FaProjectDiagram } from 'react-icons/fa';
 import { MdContactMail } from 'react-icons/md';
@@ -57,7 +57,14 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-[#00B477]">resume</a>
+                    <Link
+                    download
+                    to="https://drive.google.com/file/d/1Ko_fpzocebAY_RaHFoXkzEiUp2oG86Gc/view?usp=sharing"
+                    target="_blank"
+                    className="rounded-md border-none border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
+                    >
+                    Resume
+                    </Link>
                 </div>
             </div>
         </div>
