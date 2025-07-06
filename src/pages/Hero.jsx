@@ -84,19 +84,19 @@ const Hero = () => {
                 >
                 <FaWhatsapp size={25} />
                 </Link>
-                {/* <Link
-                to=""
+                <Link
+                to="http://www.linkedin.com/in/mahatab6"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaLinkedinIn size={25} />
-                </Link> */}
+                </Link>
             </div>
 
             <div className="flex flex-1 justify-center mt-3 gap-1 px-5">
                 <Link
                 download
-                to="https://drive.google.com/file/d/1Ko_fpzocebAY_RaHFoXkzEiUp2oG86Gc/view?usp=sharing"
+                to="https://drive.google.com/file/d/1zG-B5DuIJoakjTHF7S2gyeY2ChLF7p82/view?usp=sharing"
                 target="_blank"
                 className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
                 >
