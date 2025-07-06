@@ -53,28 +53,6 @@ Welcome to my developer portfolio, a modern, fully responsive, and animated webs
 | next-themes                    | `v0.4.6`   |
 
 
-🗂️ Project Structure
-
-src/
-├── assets/                  # Images, logos, static files
-├── components/              # Reusable and layout components
-│   ├── Layout/
-│   │   └── Mainlayout.jsx
-│   ├── Main Components/
-│   │   ├── Footer.jsx
-│   │   ├── Home.jsx
-│   │   └── Navbar.jsx
-│   ├── Reusable Components/
-│   │   └── Logo.jsx
-├── pages/                   # Individual page sections
-│   ├── AboutMe.jsx
-│   ├── Contact.jsx
-│   ├── Hero.jsx
-│   ├── Projects.jsx
-│   └── Skills.jsx
-├── root/
-│   └── Router.jsx           # App router configuration
-
 
 👋 Let's Connect
 
