@@ -96,7 +96,7 @@ const Hero = () => {
             <div className="flex flex-1 justify-center mt-3 gap-1 px-5">
                 <Link
                 download
-                to="https://drive.google.com/file/d/1zG-B5DuIJoakjTHF7S2gyeY2ChLF7p82/view?usp=sharing"
+                to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
                 target="_blank"
                 className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
                 >
