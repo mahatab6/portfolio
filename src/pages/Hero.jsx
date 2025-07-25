@@ -63,13 +63,13 @@ const Hero = () => {
             <div className="w-46">
             {/* Social Icons */}
             <div className="flex flex-1 space-x-2">
-                {/* <Link
+                <Link
                 to="https://www.facebook.com/mahatab156"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
                 >
                 <FaFacebookF size={25} />
-                </Link> */}
+                </Link>
                 <Link
                 to="https://github.com/mahatab6"
                 target="_blank"
