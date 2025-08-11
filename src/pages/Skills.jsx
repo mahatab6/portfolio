@@ -68,7 +68,7 @@ const skills = [
 
 const SkillsGrid = () => {
   return (
-    <div className="py-10 px-5 bg-[#0F172A] min-h-screen">
+    <div className="py-10 px-5 bg-[#060407] min-h-screen">
 
       <h1 className="text-4xl font-bold text-green-400 text-center py-10">My Skills</h1>
       

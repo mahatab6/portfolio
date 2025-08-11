@@ -87,13 +87,11 @@ export default function Contact() {
 
   return (
     <main
-      className="pt-10 lg:pt-[0rem] bg-[#0F172A]
+      className="py-10 lg:pt-[0rem] bg-[#060407]
      text-white min-h-screen"
     >
-      <Helmet>
-        <title>Contact | Mahatab</title>
-      </Helmet>
-      <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
+     <h1 className=" text-4xl font-bold text-green-400 text-center py-20">Contact me</h1>
+      <section className="hero flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="w-2xl mx-auto">
           <div className="">
             
