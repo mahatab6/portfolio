@@ -91,6 +91,12 @@ export default function Contact() {
      text-white min-h-screen"
     >
      <h1 className=" text-4xl font-bold text-green-400 text-center py-20">Contact me</h1>
+     <div className="text-center text-xl">
+      <p>Email address: mahatabcall56@gmail.com</p>
+      <p>Phone number: +8801743643156</p>
+     </div>
+      <div className="text-center py-10">OR</div>
+
       <section className="hero flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="w-2xl mx-auto">
           <div className="">

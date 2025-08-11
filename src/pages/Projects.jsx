@@ -56,7 +56,7 @@ const projects = [
     title: "EduHub!",
     description:
       "EduHub – Digital Course Selling Platform EduHub is a full-stack digital course marketplace designed for seamless enrollment, course browsing, and learning. With modern UI components, robust backend APIs, and responsive design, EduHub provides an intuitive platform for both learners and admins.",
-    link: "https://i.ibb.co/fVfNShfY/image.png",
+    link: "https://i.ibb.co.com/27fm9Lsx/Home-Edu-Hub-08-12-2025-01-41-AM.png",
     color: "#FF850A",
     githubLink: "https://github.com/mahatab6/EduHub",
     liveLink: "https://eduhub-17199.netlify.app/",
