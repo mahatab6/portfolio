@@ -1,9 +1,10 @@
 import React from 'react';
 import Logo from '../Reusable Components/Logo';
-import { Link, NavLink } from 'react-router';
+import { Link } from 'react-router';
 import { AiFillHome } from 'react-icons/ai';
-import { FaTools, FaBriefcase, FaGraduationCap, FaProjectDiagram } from 'react-icons/fa';
+import { FaTools, FaProjectDiagram } from 'react-icons/fa';
 import { MdContactMail } from 'react-icons/md';
+import { Link as ScrollLink } from 'react-scroll';
 
 
 const Navbar = () => {
@@ -11,24 +12,29 @@ const Navbar = () => {
     const link = (
         <>
             <li>
-                <NavLink to='/' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <ScrollLink to='home-section' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <AiFillHome /> Home
-                </NavLink>
+                </ScrollLink>
             </li>
             <li>
-                <NavLink to='/skills' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <ScrollLink to='about-section' smooth={true} duration={500} className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <FaTools /> About
+                </ScrollLink>
+            </li>
+            <li>
+                <ScrollLink to='skill-section' smooth={true} duration={500} className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <FaTools /> Skills
-                </NavLink>
+                </ScrollLink>
             </li>
             <li>
-                <NavLink to='/projects' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <ScrollLink to='project-section' smooth={true} duration={500} className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <FaProjectDiagram /> Projects
-                </NavLink>
+                </ScrollLink>
             </li>
             <li>
-                <NavLink to='/contact' className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <ScrollLink to='contact-section' smooth={true} duration={500} className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <MdContactMail /> Contact
-                </NavLink>
+                </ScrollLink>
             </li>
         </>
 
