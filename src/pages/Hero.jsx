@@ -3,14 +3,13 @@ import herogb from '../assets/portfoliobg.jpg'
 import { TypeAnimation } from 'react-type-animation';
 import { FaFacebookF, FaGithub, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router';
-import { Link as ScrollLink } from 'react-scroll';
 
 
 
 
 const Hero = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative min-h-screen ">
       <div
         className="absolute inset-0"
         style={{
@@ -22,7 +21,7 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="relative z-10 w-9/12 mx-auto h-full flex flex-col py-10 lg:py-60 text-white space-y-3">
+      <div className="relative z-10 w-11/12 md:w-9/12 mx-auto min-h-screen flex flex-col items-start justify-center text-white space-y-3">
             <p className="text-xl">Hello, I'm</p>
             <h1 className="text-4xl font-bold">Md. Mahatab Hosen Raju</h1>
 
@@ -64,13 +63,6 @@ const Hero = () => {
             {/* Social Icons */}
             <div className="flex flex-1 space-x-2">
                 <Link
-                to="https://www.facebook.com/mahatab156"
-                target="_blank"
-                className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
-                >
-                <FaFacebookF size={25} />
-                </Link>
-                <Link
                 to="https://github.com/mahatab6"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
@@ -93,7 +85,7 @@ const Hero = () => {
                 </Link>
             </div>
 
-            <div className="flex flex-1 justify-center mt-3 gap-1 px-5">
+            <div className=" flex-1 justify-center mt-3 ">
                 <Link
                 download
                 to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
@@ -102,7 +94,6 @@ const Hero = () => {
                 >
                 Resume
               </Link>
-              <ScrollLink to="about" smooth={true} duration={500} className="rounded-md border  border-[#00B477] btn bg-base-100  hover:bg-[#00B477]" >About me</ScrollLink>
             </div>
             
           </div>

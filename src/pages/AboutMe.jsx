@@ -6,8 +6,8 @@ const AboutMe = () => {
   
   return (
     <section id="about">
-      <div className='bg-[#060407] py-10'>
-      <div className='w-9/12 mx-auto border border-green-500 p-10'>
+      <div className='bg-[#060407] pt-20 min-h-screen'>
+      <div className='w-11/12 md:w-9/12 mx-auto border border-green-500 p-10'>
         <h2 className='text-3xl text-center text-green-400 font-bold pb-5'>About Me</h2>
 
         <div className='md:flex mb-10'>

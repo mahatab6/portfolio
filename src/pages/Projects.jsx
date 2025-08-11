@@ -2,7 +2,6 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -79,8 +78,9 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-[#0F172A]">
+      <main className="bg-black min-h-screen" ref={container}>
+        <section className="text-white  bg-[#0F172A] ">
+          <h1 className="sticky top-1 text-4xl font-bold text-green-400 text-center pt-20">My Projects</h1>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
@@ -121,13 +121,14 @@ function Card({
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
+    
     <div
       ref={container}
       className="h-screen flex items-center justify-center sticky top-0 project-container"
     >
-      <Helmet>
-        <title>Projects | Mahatab</title>
-      </Helmet>
+    
+
+
       <motion.div
         style={{
           scale,
