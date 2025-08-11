@@ -2,17 +2,56 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { FaReact } from "react-icons/fa";
+import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiNodedotjs, SiReacthookform, SiReactrouter, SiStripe, SiTailwindcss } from "react-icons/si";
 
 const projects = [
   {
     title: "GreenMind!",
     description:
       "GreenMind is a modern full-stack web application that encourages sustainable, plant-based living through a beautiful, responsive user interface and powerful backend support. Built with React, TailwindCSS, Node.js, Express, and MongoDB, it offers an intuitive experience for managing plant care and promotes eco-friendly habits.",
-    link: "https://i.ibb.co/p618g9Ss/Screenshot-36.png",
+    link: "https://i.ibb.co.com/xSX5zFpW/Home-Green-Mind-08-08-2025-09-59-AM.png",
     color: "#00B477",
     githubLink: "https://github.com/mahatab6/GreenMind",
     liveLink: "https://plant-care-60.netlify.app/",
+    detailslink: "https://github.com/mahatab6/GreenMind/blob/main/README.md",
+    icon: [
+      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
+      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
+      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
+      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
+      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
+      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
+      <FaReact size={25} className="text-blue-400" />],
+ 
   },
+
+  {
+    title: "🌐 NodeTalk",
+
+    description:"NodeTalk Client is the frontend of a forum platform built with modern React and Tailwind. It provides authentication (Firebase), post creation and moderation tools, tag-based filtering, analytics views, and a Stripe-powered premium membership flow. The UI focuses on speed, accessibility, and mobile responsiveness.",
+
+    link: "https://i.ibb.co.com/VYPFgnVT/NodeTalk.png",
+    color: "#D0D2E6",
+    githubLink: "https://github.com/mahatab6/Node-Talk-Client-Side",
+    liveLink: "https://nodetalk-12.netlify.app/",
+    detailslink: "https://github.com/mahatab6/Node-Talk-Client-Side/blob/main/README.md",
+    icon: [
+      <FaReact size={25} className="text-blue-400" title="React 19" />,
+      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
+      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
+      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
+      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
+      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
+      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
+      <SiStripe size={25} className="text-indigo-600" title="Stripe (Payments)" />,
+      <SiAxios size={25} className="text-blue-600" title="Axios" key="axios" />,
+      <SiReacthookform size={25} className="text-purple-600" title="React Hook Form" key="hookform" />,
+
+
+      ]
+  },
+
   {
     title: "EduHub!",
     description:
@@ -21,6 +60,15 @@ const projects = [
     color: "#FF850A",
     githubLink: "https://github.com/mahatab6/EduHub",
     liveLink: "https://eduhub-17199.netlify.app/",
+    detailslink: "https://github.com/mahatab6/EduHub/blob/main/README.md",
+     icon: [
+      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
+      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
+      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
+      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
+      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
+      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
+      <FaReact size={25} className="text-blue-400" />],
   },
   
   
@@ -87,15 +135,17 @@ export default function Projects() {
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project.link}
-                title={project.title}
-                color={project.color}
-                description={project.description}
+                url={project?.link}
+                title={project?.title}
+                color={project?.color}
+                description={project?.description}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                githubLink={project.githubLink}
-                liveLink={project.liveLink}
+                githubLink={project?.githubLink}
+                liveLink={project?.liveLink}
+                detailslink={project?.detailslink}
+                icon={project?.icon}
               />
             );
           })}
@@ -116,6 +166,8 @@ function Card({
   targetScale,
   githubLink,
   liveLink,
+  detailslink,
+  icon
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -143,11 +195,11 @@ function Card({
         }}
       >
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
-          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
+          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-y-auto">
             <motion.img
               src={url}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full "
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.4 }}
@@ -180,6 +232,9 @@ function Card({
               </h2>
               <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md">
                 {description}
+              </p>
+              <p className="mt-4 md:mt-auto pt-4 grid grid-cols-5 md:grid-cols-10 gap-2">
+                {icon}
               </p>
             </div>
 
@@ -244,6 +299,27 @@ function Card({
                     style={{ color }}
                   >
                     Live
+                  </span>
+                </motion.a>
+                <motion.a
+                  href={detailslink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2"
+                  whileHover={{ y: -3 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  <span
+                    className="text-xs md:text-sm font-medium"
+                    style={{ color }}
+                  >
+                    Details
                   </span>
                 </motion.a>
               </div>
