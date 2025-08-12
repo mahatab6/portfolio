@@ -1,9 +1,10 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { FaReact } from "react-icons/fa";
 import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiNodedotjs, SiReacthookform, SiReactrouter, SiStripe, SiTailwindcss } from "react-icons/si";
+
 
 const projects = [
   {
@@ -14,7 +15,6 @@ const projects = [
     color: "#00B477",
     githubLink: "https://github.com/mahatab6/GreenMind",
     liveLink: "https://plant-care-60.netlify.app/",
-    detailslink: "https://github.com/mahatab6/GreenMind/blob/main/README.md",
     icon: [
       <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
       <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
@@ -22,20 +22,20 @@ const projects = [
       <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
       <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
       <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
-      <FaReact size={25} className="text-blue-400" />],
- 
+      <FaReact size={25} className="text-blue-400" />,
+    ],
+    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "React Router", "Firebase"],
+    challenges: "Integrating Firebase authentication with a custom backend and ensuring responsive design across devices.",
+    futurePlans: "Add AI-based plant care recommendations and a community feature for user tips.",
   },
-
   {
     title: "🌐 NodeTalk",
-
-    description:"NodeTalk Client is the frontend of a forum platform built with modern React and Tailwind. It provides authentication (Firebase), post creation and moderation tools, tag-based filtering, analytics views, and a Stripe-powered premium membership flow. The UI focuses on speed, accessibility, and mobile responsiveness.",
-
+    description:
+      "NodeTalk Client is the frontend of a forum platform built with modern React and Tailwind. It provides authentication (Firebase), post creation and moderation tools, tag-based filtering, analytics views, and a Stripe-powered premium membership flow. The UI focuses on speed, accessibility, and mobile responsiveness.",
     link: "https://i.ibb.co.com/VYPFgnVT/NodeTalk.png",
     color: "#D0D2E6",
     githubLink: "https://github.com/mahatab6/Node-Talk-Client-Side",
     liveLink: "https://nodetalk-12.netlify.app/",
-    detailslink: "https://github.com/mahatab6/Node-Talk-Client-Side/blob/main/README.md",
     icon: [
       <FaReact size={25} className="text-blue-400" title="React 19" />,
       <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
@@ -47,11 +47,11 @@ const projects = [
       <SiStripe size={25} className="text-indigo-600" title="Stripe (Payments)" />,
       <SiAxios size={25} className="text-blue-600" title="Axios" key="axios" />,
       <SiReacthookform size={25} className="text-purple-600" title="React Hook Form" key="hookform" />,
-
-
-      ]
+    ],
+    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "Firebase", "Stripe", "Axios", "React Hook Form"],
+    challenges: "Implementing real-time post filtering and ensuring secure Stripe payment integration.",
+    futurePlans: "Add real-time chat functionality and improve analytics with custom dashboards.",
   },
-
   {
     title: "EduHub!",
     description:
@@ -60,20 +60,21 @@ const projects = [
     color: "#FF850A",
     githubLink: "https://github.com/mahatab6/EduHub",
     liveLink: "https://eduhub-17199.netlify.app/",
-    detailslink: "https://github.com/mahatab6/EduHub/blob/main/README.md",
-     icon: [
+    icon: [
       <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
       <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
       <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
       <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
       <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
       <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
-      <FaReact size={25} className="text-blue-400" />],
+      <FaReact size={25} className="text-blue-400" />,
+    ],
+    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "React Router", "Firebase"],
+    challenges: "Building a scalable course management system and optimizing API performance.",
+    futurePlans: "Integrate video streaming for courses and add a review system for user feedback.",
   },
-  
-  
- 
 ];
+
 
 export default function Projects() {
   const container = useRef(null);
@@ -81,6 +82,9 @@ export default function Projects() {
     target: container,
     offset: ["start start", "end end"],
   });
+
+  // New state to track the selected project for the modal
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -98,14 +102,12 @@ export default function Projects() {
       }
     `;
     document.head.appendChild(style);
-
     const checkResolution = () => {
       const isTargetResolution =
         window.innerWidth >= 1360 &&
         window.innerWidth <= 1370 &&
         window.innerHeight >= 760 &&
         window.innerHeight <= 775;
-
       if (isTargetResolution) {
         document.documentElement.style.setProperty("--project-scale", "0.85");
         document.documentElement.style.setProperty("--project-margin", "-5vh");
@@ -114,20 +116,24 @@ export default function Projects() {
         document.documentElement.style.setProperty("--project-margin", "0");
       }
     };
-
     checkResolution();
     window.addEventListener("resize", checkResolution);
-
     return () => {
       document.head.removeChild(style);
       window.removeEventListener("resize", checkResolution);
     };
   }, []);
 
+  // Function to open modal with selected project data
+  const openModal = (project) => {
+    setSelectedProject(project);
+    document.getElementById('my_modal_1').showModal();
+  };
+
   return (
     <ReactLenis root>
       <main className="bg-[#060407] min-h-screen" ref={container}>
-        <section className="text-white  bg-[#060407] ">
+        <section className="text-white bg-[#060407] ">
           <h1 className=" text-4xl font-bold text-green-400 text-center pt-20">My Projects</h1>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
@@ -146,11 +152,105 @@ export default function Projects() {
                 liveLink={project?.liveLink}
                 detailslink={project?.detailslink}
                 icon={project?.icon}
+                challenges={project?.challenges}
+                techStack={project?.techStack}
+                futurePlans={project?.futurePlans}
+                onDetailsClick={() => openModal(project)} // Pass click handler
               />
             );
           })}
         </section>
       </main>
+
+      
+      {/* Single modal */}
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box max-w-5xl">
+          {selectedProject ? (
+            <>
+              {/* Project Image */}
+              <div className="w-full h-100 overflow-y-auto rounded-lg mb-4">
+                <img
+                  src={selectedProject.link}
+                  alt={selectedProject.title}
+                  className="w-full object-cover"
+                />
+              </div>
+
+              {/* Title */}
+              <h3 className="font-bold text-2xl mb-2">{selectedProject.title}</h3>
+
+              {/* Tech Stack */}
+              {selectedProject.techStack && selectedProject.techStack.length > 0 && (
+                <div className="mb-4">
+                  <h4 className="font-semibold">Main Technology Stack Used:</h4>
+                  <ul className="list-disc pl-5">
+                    {selectedProject.techStack.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Brief Description */}
+              <div className="mb-4">
+                <h4 className="font-semibold">Brief Description:</h4>
+                <p>{selectedProject.description}</p>
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-wrap gap-4 mb-4">
+                {selectedProject.liveLink && (
+                  <a
+                    href={selectedProject.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    Live Project
+                  </a>
+                )}
+                {selectedProject.githubLink && (
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                  >
+                    GitHub (Client)
+                  </a>
+                )}
+              </div>
+
+              {/* Challenges */}
+              {selectedProject.challenges && (
+                <div className="mb-4">
+                  <h4 className="font-semibold">Challenges Faced:</h4>
+                  <p>{selectedProject.challenges}</p>
+                </div>
+              )}
+
+              {/* Future Plans */}
+              {selectedProject.futurePlans && (
+                <div className="mb-4">
+                  <h4 className="font-semibold">Potential Improvements & Future Plans:</h4>
+                  <p>{selectedProject.futurePlans}</p>
+                </div>
+              )}
+            </>
+          ) : (
+            <p>No project selected.</p>
+          )}
+
+          {/* Close Button */}
+          <div className="modal-action">
+            <form method="dialog">
+              <button className="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
     </ReactLenis>
   );
 }
@@ -166,21 +266,16 @@ function Card({
   targetScale,
   githubLink,
   liveLink,
-  detailslink,
-  icon
+  icon,
+  onDetailsClick,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
-
   return (
-    
     <div
       ref={container}
       className="h-screen flex items-center justify-center sticky top-0 project-container"
     >
-    
-
-
       <motion.div
         style={{
           scale,
@@ -211,12 +306,10 @@ function Card({
               whileHover={{ opacity: 0.3 }}
               transition={{ duration: 0.3 }}
             />
-
             <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
               Project {i + 1}
             </div>
           </div>
-
           <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -226,7 +319,6 @@ function Card({
                 />
                 <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
               </div>
-
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-4">
                 {title}
               </h2>
@@ -237,10 +329,8 @@ function Card({
                 {icon}
               </p>
             </div>
-
             <div className="mt-4 md:mt-auto pt-4">
               <div className="w-full h-[1px] bg-gray-800 mb-4 md:mb-6" />
-
               <div className="flex items-center gap-4">
                 <motion.a
                   href={githubLink}
@@ -270,7 +360,6 @@ function Card({
                     Code
                   </span>
                 </motion.a>
-
                 <motion.a
                   href={liveLink}
                   target="_blank"
@@ -301,11 +390,9 @@ function Card({
                     Live
                   </span>
                 </motion.a>
-                <motion.a
-                  href={detailslink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2"
+                <motion.div 
+                  onClick={onDetailsClick} 
+                  className="group flex items-center gap-2 hover:cursor-pointer"
                   whileHover={{ y: -3 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
@@ -321,7 +408,7 @@ function Card({
                   >
                     Details
                   </span>
-                </motion.a>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -342,4 +429,5 @@ Card.propTypes = {
   targetScale: PropTypes.number.isRequired,
   githubLink: PropTypes.string.isRequired,
   liveLink: PropTypes.string.isRequired,
+  onDetailsClick: PropTypes.func.isRequired,
 };
