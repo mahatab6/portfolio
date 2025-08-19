@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutimg from '../assets/imageportfolio.png';
+import aboutimg from '../assets/aboutimage.jpg';
 import { GoDotFill } from "react-icons/go";
 
 const AboutMe = () => {
@@ -12,8 +12,13 @@ const AboutMe = () => {
 
         <div className='md:flex mb-10'>
           <div className='flex-1 flex justify-center items-center'>
-            <img className='w-100 rounded-full ' src={aboutimg} alt="Profile" />
+            <img
+              className="w-80 my-10  md:w-120 border-4 border-green-400/30 "
+              src={aboutimg}
+              alt="Profile"
+            />
           </div>
+           
           <div className='flex-1 text-white'>
             <p className='text-xl p-2'>
               Hi! I'm <span className='font-bold'>Md. Mahatab Hosen Raju</span>, a passionate <span className='font-bold'>MERN Stack Developer</span> who loves building clean, responsive, and user-friendly web applications.
