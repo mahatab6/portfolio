@@ -32,7 +32,7 @@ const projects = [
     title: "🌐 NodeTalk",
     description:
       "NodeTalk Client is the frontend of a forum platform built with modern React and Tailwind. It provides authentication (Firebase), post creation and moderation tools, tag-based filtering, analytics views, and a Stripe-powered premium membership flow. The UI focuses on speed, accessibility, and mobile responsiveness.",
-    link: "https://i.ibb.co.com/VYPFgnVT/NodeTalk.png",
+    link: "https://i.ibb.co.com/pvWMVhDj/Node-Talk-08-19-2025-11-00-PM.png",
     color: "#D0D2E6",
     githubLink: "https://github.com/mahatab6/Node-Talk-Client-Side",
     liveLink: "https://nodetalk-12.netlify.app/",
