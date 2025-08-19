@@ -210,7 +210,7 @@ export default function Contact() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-green-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-green-600 transition"
+            className="w-full bg-green-500 hover:cursor-pointer text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-green-600 transition"
           >
             <span>Send Message</span>
             <Send className="w-4 h-4" />

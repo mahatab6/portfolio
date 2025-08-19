@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router";
 import heroimage from "../assets/heroimg.png";
+import { FaArrowDown } from "react-icons/fa";
+
 
 const Hero = () => {
   return (
@@ -99,7 +101,7 @@ const Hero = () => {
                 to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
                 target="_blank"
                 className="rounded-md border border-[#00B477] btn bg-base-100 hover:bg-[#00B477]"
-              >
+              ><FaArrowDown />
                 Resume
               </Link>
             </div>

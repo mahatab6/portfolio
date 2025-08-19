@@ -5,6 +5,8 @@ import { AiFillHome } from 'react-icons/ai';
 import { FaTools, FaProjectDiagram } from 'react-icons/fa';
 import { MdContactMail } from 'react-icons/md';
 import { Link as ScrollLink } from 'react-scroll';
+import { FaArrowDown } from "react-icons/fa";
+
 
 
 const Navbar = () => {
@@ -32,7 +34,7 @@ const Navbar = () => {
                 </ScrollLink>
             </li>
             <li>
-                <ScrollLink to='contact-section' smooth={true} duration={500} className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
+                <ScrollLink to='contact-section' smooth={true} duration={500} spy={true} activeClass="text-[#00B477]" className={({ isActive }) => isActive ? "text-[#00B477] text-base flex items-center gap-2" : "flex items-center gap-2"}>
                 <MdContactMail /> Contact
                 </ScrollLink>
             </li>
@@ -67,8 +69,8 @@ const Navbar = () => {
                     download
                     to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
                     target="_blank"
-                    className="rounded-md border-none border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
-                    >
+                    className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
+                    ><FaArrowDown />
                     Resume
                     </Link>
                 </div>
