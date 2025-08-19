@@ -109,7 +109,7 @@ const Hero = () => {
         {/* Right Section - Image */}
         <div className="flex-1 flex justify-end  ">
           <img
-            className="w-56 rounded-full md:w-120 border-4 border-[#006F74] bg-[#006F74]/20  "
+            className="w-80 my-10 rounded-full md:w-120 border-4 border-[#006F74] bg-[#006F74]/20  "
             src={heroimage}
             alt="Hero"
           />
