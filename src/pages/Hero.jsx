@@ -1,103 +1,119 @@
-import React from 'react';
-import herogb from '../assets/portfoliobg.jpg'
-import { TypeAnimation } from 'react-type-animation';
-import { FaFacebookF, FaGithub, FaWhatsapp, FaLinkedinIn } from 'react-icons/fa';
-import { Link } from 'react-router';
-
-
-
+import React from "react";
+import herogb from "../assets/portfoliobg.jpg";
+import { TypeAnimation } from "react-type-animation";
+import {
+  FaFacebookF,
+  FaGithub,
+  FaWhatsapp,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import { Link } from "react-router";
+import heroimage from "../assets/heroimg.png";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen ">
+    <div className="relative min-h-screen bg-[#070707] overflow-hidden">
+      {/* Background Overlay */}
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${herogb})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          filter: 'brightness(60%)',
-          height: 'full'
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(50%)",
         }}
       ></div>
 
-      <div className="relative z-10 w-11/12 md:w-9/12 mx-auto min-h-screen flex flex-col items-start justify-center text-white space-y-3">
-            <p className="text-xl">Hello, I'm</p>
-            <h1 className="text-4xl font-bold">Md. Mahatab Hosen Raju</h1>
+      {/* Content */}
+      <div className="relative z-10 w-11/12 md:w-9/12 mx-auto min-h-screen flex flex-col-reverse md:flex-row justify-around items-center text-white space-y-6 md:space-y-0">
+        {/* Left Section */}
+        <div className="flex-1">
+          <p className="text-xl">Hello, I'm</p>
+          <h1 className="text-4xl font-bold">Md. Mahatab Hosen Raju</h1>
 
-            <span className="text-white text-xl sm:text-2xl">
-            I am a Web App Developer in-<span><br /></span> {' '}
+          <span className="text-white text-xl sm:text-2xl">
+            I am a Web App Developer in-
+            <br />
             <TypeAnimation
-                sequence={[
-                'React.js.',
+              sequence={[
+                "React.js.",
                 1000,
-                'Next.js.',
+                "Next.js.",
                 1000,
-                'Node.js.',
+                "Node.js.",
                 1000,
-                'JavaScript.',
+                "JavaScript.",
                 1000,
-                'MERN Stack.',
+                "MERN Stack.",
                 1000,
-                'Express.js.',
+                "Express.js.",
                 1000,
-                'MongoDB.',
+                "MongoDB.",
                 1000,
-                'Tailwind CSS.',
+                "Tailwind CSS.",
                 1000,
-                'Firebase.',
+                "Firebase.",
                 1000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="text-[#00B477] underline text-2xl font-semibold"
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              className="text-[#00B477] underline text-2xl font-semibold"
             />
-            </span>
+          </span>
 
-            <p className="text-xl py-5">
-            🌐 Turning complex problems into simple web <br /> solutions using the MERN stack.
-            </p>
+          <p className="text-xl py-5">
+            🌐 Turning complex problems into simple web <br /> solutions using
+            the MERN stack.
+          </p>
 
-            <div className="w-46">
-            {/* Social Icons */}
+          {/* Social Icons + Resume */}
+          <div className="w-46">
             <div className="flex flex-1 space-x-2">
-                <Link
+              <Link
                 to="https://github.com/mahatab6"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
-                >
+              >
                 <FaGithub size={25} />
-                </Link>
-                <Link
+              </Link>
+              <Link
                 to="https://wa.me/+8801743643156"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
-                >
+              >
                 <FaWhatsapp size={25} />
-                </Link>
-                <Link
+              </Link>
+              <Link
                 to="http://www.linkedin.com/in/mahatab6"
                 target="_blank"
                 className="btn bg-base-100 rounded-full p-2 hover:bg-[#00B477]"
-                >
+              >
                 <FaLinkedinIn size={25} />
-                </Link>
+              </Link>
             </div>
 
-            <div className=" flex-1 justify-center mt-3 ">
-                <Link
+            <div className="flex-1 justify-center mt-3">
+              <Link
                 download
                 to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
                 target="_blank"
-                className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
-                >
+                className="rounded-md border border-[#00B477] btn bg-base-100 hover:bg-[#00B477]"
+              >
                 Resume
               </Link>
             </div>
-            
           </div>
-          
+        </div>
+
+        {/* Right Section - Image */}
+        <div className="flex-1 flex justify-end  ">
+          <img
+            className="w-56 rounded-full md:w-120 border-4 border-[#006F74] bg-[#006F74]/20  "
+            src={heroimage}
+            alt="Hero"
+          />
+        </div>
       </div>
     </div>
   );

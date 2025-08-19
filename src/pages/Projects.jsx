@@ -169,7 +169,7 @@ export default function Projects() {
           {selectedProject ? (
             <>
               {/* Project Image */}
-              <div className="w-full h-100 overflow-y-auto rounded-lg mb-4">
+              <div className="w-full h-80 overflow-y-auto rounded-lg mb-4">
                 <img
                   src={selectedProject.link}
                   alt={selectedProject.title}
