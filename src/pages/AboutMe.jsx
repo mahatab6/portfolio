@@ -37,7 +37,7 @@ const AboutMe = () => {
               <div>
                 <p className='text-4xl font-bold text-gray-200 mb-8'>Education</p>
                 <div>
-                  <h2 className='text-xl font-bold text-green-500 flex items-center gap-1'><GoDotFill /> Diploma in Computer Science and Technology (2022 – Present)</h2>
+                  <h2 className='text-xl font-bold text-green-500 flex items-center gap-1'><GoDotFill /> Diploma in Computer Science and Technology (2022 – 2025)</h2>
                   <div className='px-5'>
                     <p className='text-base font-semibold '>Barishal Polytechnic Institute</p>
                   </div>

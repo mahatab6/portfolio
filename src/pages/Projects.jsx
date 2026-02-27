@@ -3,8 +3,22 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { FaReact } from "react-icons/fa";
-import { SiAxios, SiExpress, SiFirebase, SiMongodb, SiNodedotjs, SiReacthookform, SiReactrouter, SiStripe, SiTailwindcss } from "react-icons/si";
-
+import {
+  SiAxios,
+  SiExpress,
+  SiFirebase,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReacthookform,
+  SiReactrouter,
+  SiStripe,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { TbBrandAuth0 } from "react-icons/tb";
 
 const projects = [
   {
@@ -16,17 +30,54 @@ const projects = [
     githubLink: "https://github.com/mahatab6/GreenMind",
     liveLink: "https://plant-care-60.netlify.app/",
     icon: [
-      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
-      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
-      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
-      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
-      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
-      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
+      <SiMongodb
+        size={25}
+        className="text-green-600"
+        title="MongoDB"
+        key="mongodb"
+      />,
+      <SiExpress
+        size={25}
+        className="text-gray-700"
+        title="Express.js"
+        key="express"
+      />,
+      <SiNodedotjs
+        size={25}
+        className="text-green-500"
+        title="Node.js"
+        key="nodejs"
+      />,
+      <SiTailwindcss
+        size={25}
+        className="text-teal-400"
+        title="Tailwind CSS 4"
+      />,
+      <SiReactrouter
+        size={25}
+        className="text-purple-600"
+        title="React Router v7"
+      />,
+      <SiFirebase
+        size={25}
+        className="text-yellow-400"
+        title="Firebase (Authentication)"
+      />,
       <FaReact size={25} className="text-blue-400" />,
     ],
-    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "React Router", "Firebase"],
-    challenges: "Integrating Firebase authentication with a custom backend and ensuring responsive design across devices.",
-    futurePlans: "Add AI-based plant care recommendations and a community feature for user tips.",
+    techStack: [
+      "React",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "React Router",
+      "Firebase",
+    ],
+    challenges:
+      "Integrating Firebase authentication with a custom backend and ensuring responsive design across devices.",
+    futurePlans:
+      "Add AI-based plant care recommendations and a community feature for user tips.",
   },
   {
     title: "🌐 NodeTalk",
@@ -38,19 +89,67 @@ const projects = [
     liveLink: "https://nodetalk-12.netlify.app/",
     icon: [
       <FaReact size={25} className="text-blue-400" title="React 19" />,
-      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
-      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
-      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
-      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
-      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
-      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
-      <SiStripe size={25} className="text-indigo-600" title="Stripe (Payments)" />,
+      <SiMongodb
+        size={25}
+        className="text-green-600"
+        title="MongoDB"
+        key="mongodb"
+      />,
+      <SiExpress
+        size={25}
+        className="text-gray-700"
+        title="Express.js"
+        key="express"
+      />,
+      <SiNodedotjs
+        size={25}
+        className="text-green-500"
+        title="Node.js"
+        key="nodejs"
+      />,
+      <SiTailwindcss
+        size={25}
+        className="text-teal-400"
+        title="Tailwind CSS 4"
+      />,
+      <SiReactrouter
+        size={25}
+        className="text-purple-600"
+        title="React Router v7"
+      />,
+      <SiFirebase
+        size={25}
+        className="text-yellow-400"
+        title="Firebase (Authentication)"
+      />,
+      <SiStripe
+        size={25}
+        className="text-indigo-600"
+        title="Stripe (Payments)"
+      />,
       <SiAxios size={25} className="text-blue-600" title="Axios" key="axios" />,
-      <SiReacthookform size={25} className="text-purple-600" title="React Hook Form" key="hookform" />,
+      <SiReacthookform
+        size={25}
+        className="text-purple-600"
+        title="React Hook Form"
+        key="hookform"
+      />,
     ],
-    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "Firebase", "Stripe", "Axios", "React Hook Form"],
-    challenges: "Implementing real-time post filtering and ensuring secure Stripe payment integration.",
-    futurePlans: "Add real-time chat functionality and improve analytics with custom dashboards.",
+    techStack: [
+      "React",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Firebase",
+      "Stripe",
+      "Axios",
+      "React Hook Form",
+    ],
+    challenges:
+      "Implementing real-time post filtering and ensuring secure Stripe payment integration.",
+    futurePlans:
+      "Add real-time chat functionality and improve analytics with custom dashboards.",
   },
   {
     title: "EduHub!",
@@ -61,20 +160,107 @@ const projects = [
     githubLink: "https://github.com/mahatab6/EduHub",
     liveLink: "https://eduhub-17199.netlify.app/",
     icon: [
-      <SiMongodb size={25} className="text-green-600" title="MongoDB" key="mongodb" />,
-      <SiExpress size={25} className="text-gray-700" title="Express.js" key="express" />,
-      <SiNodedotjs size={25} className="text-green-500" title="Node.js" key="nodejs" />,
-      <SiTailwindcss size={25} className="text-teal-400" title="Tailwind CSS 4" />,
-      <SiReactrouter size={25} className="text-purple-600" title="React Router v7" />,
-      <SiFirebase size={25} className="text-yellow-400" title="Firebase (Authentication)" />,
+      <SiMongodb
+        size={25}
+        className="text-green-600"
+        title="MongoDB"
+        key="mongodb"
+      />,
+      <SiExpress
+        size={25}
+        className="text-gray-700"
+        title="Express.js"
+        key="express"
+      />,
+      <SiNodedotjs
+        size={25}
+        className="text-green-500"
+        title="Node.js"
+        key="nodejs"
+      />,
+      <SiTailwindcss
+        size={25}
+        className="text-teal-400"
+        title="Tailwind CSS 4"
+      />,
+      <SiReactrouter
+        size={25}
+        className="text-purple-600"
+        title="React Router v7"
+      />,
+      <SiFirebase
+        size={25}
+        className="text-yellow-400"
+        title="Firebase (Authentication)"
+      />,
       <FaReact size={25} className="text-blue-400" />,
     ],
-    techStack: ["React", "TailwindCSS", "Node.js", "Express", "MongoDB", "React Router", "Firebase"],
-    challenges: "Building a scalable course management system and optimizing API performance.",
-    futurePlans: "Integrate video streaming for courses and add a review system for user feedback.",
+    techStack: [
+      "React",
+      "TailwindCSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "React Router",
+      "Firebase",
+    ],
+    challenges:
+      "Building a scalable course management system and optimizing API performance.",
+    futurePlans:
+      "Integrate video streaming for courses and add a review system for user feedback.",
+  },
+  {
+    title: "Mentora",
+    description:
+      "A high-performance full-stack tutoring ecosystem built with Next.js and PostgreSQL. Mentora features type-safe database management via Prisma, robust authentication through Better Auth, and sophisticated data visualization.",
+    link: "https://i.ibb.co.com/5hjBDJqL/Mentora.png",
+    color: "#00cec9",
+    githubLink: "https://github.com/mahatab6/Mentora-frontend",
+    liveLink: "https://mentora-nu-vert.vercel.app/",
+    icon: [
+      <SiNextdotjs
+        size={25}
+        className="text-white"
+        title="Next.js 16"
+        key="nextjs"
+      />,
+      <SiPostgresql
+        size={25}
+        className="text-blue-400"
+        title="PostgreSQL"
+        key="postgresql"
+      />,
+      <SiNodedotjs
+        size={25}
+        className="text-green-500"
+        title="Node.js"
+        key="nodejs"
+      />,
+      <SiPrisma
+        size={25}
+        className="text-white"
+        title="Prisma ORM"
+        key="prisma"
+      />,
+      <SiReactrouter
+        size={25}
+        className="text-purple-600"
+        title="React Router v7"
+      />,
+      <SiTypescript
+        size={25}
+        className="text-blue-600"
+        title="TypeScript"
+        key="typescript"
+      />,
+      <TbBrandAuth0 size={25} className="text-orange-500" title="Better Auth" key="auth" />,
+      <FaReact size={25} className="text-blue-400" />,
+    ],
+    techStack: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "Better Auth", "TanStack Table", "Zod", "Radix UI", "Recharts"],
+    challenges: "Implementing a complex relational schema with Prisma and ensuring strict type safety across the full stack with TypeScript and Zod validation.",
+    futurePlans: "Implement real-time session scheduling with date-fns and integrate Stripe for automated tutor payouts.",
   },
 ];
-
 
 export default function Projects() {
   const container = useRef(null);
@@ -127,14 +313,16 @@ export default function Projects() {
   // Function to open modal with selected project data
   const openModal = (project) => {
     setSelectedProject(project);
-    document.getElementById('my_modal_1').showModal();
+    document.getElementById("my_modal_1").showModal();
   };
 
   return (
     <ReactLenis root>
       <main className="bg-[#060407] min-h-screen" ref={container}>
         <section className="text-white bg-[#060407] ">
-          <h1 className=" text-4xl font-bold text-green-400 text-center pt-20">My Projects</h1>
+          <h1 className=" text-4xl font-bold text-green-400 text-center pt-20">
+            My Projects
+          </h1>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
@@ -162,7 +350,6 @@ export default function Projects() {
         </section>
       </main>
 
-      
       {/* Single modal */}
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box max-w-5xl">
@@ -178,19 +365,24 @@ export default function Projects() {
               </div>
 
               {/* Title */}
-              <h3 className="font-bold text-2xl mb-2">{selectedProject.title}</h3>
+              <h3 className="font-bold text-2xl mb-2">
+                {selectedProject.title}
+              </h3>
 
               {/* Tech Stack */}
-              {selectedProject.techStack && selectedProject.techStack.length > 0 && (
-                <div className="mb-4">
-                  <h4 className="font-semibold">Main Technology Stack Used:</h4>
-                  <ul className="list-disc pl-5">
-                    {selectedProject.techStack.map((tech, index) => (
-                      <li key={index}>{tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {selectedProject.techStack &&
+                selectedProject.techStack.length > 0 && (
+                  <div className="mb-4">
+                    <h4 className="font-semibold">
+                      Main Technology Stack Used:
+                    </h4>
+                    <ul className="list-disc pl-5">
+                      {selectedProject.techStack.map((tech, index) => (
+                        <li key={index}>{tech}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
               {/* Brief Description */}
               <div className="mb-4">
@@ -233,7 +425,9 @@ export default function Projects() {
               {/* Future Plans */}
               {selectedProject.futurePlans && (
                 <div className="mb-4">
-                  <h4 className="font-semibold">Potential Improvements & Future Plans:</h4>
+                  <h4 className="font-semibold">
+                    Potential Improvements & Future Plans:
+                  </h4>
                   <p>{selectedProject.futurePlans}</p>
                 </div>
               )}
@@ -250,7 +444,6 @@ export default function Projects() {
           </div>
         </div>
       </dialog>
-
     </ReactLenis>
   );
 }
@@ -390,14 +583,23 @@ function Card({
                     Live
                   </span>
                 </motion.a>
-                <motion.div 
-                  onClick={onDetailsClick} 
+                <motion.div
+                  onClick={onDetailsClick}
                   className="group flex items-center gap-2 hover:cursor-pointer"
                   whileHover={{ y: -3 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={color}
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>

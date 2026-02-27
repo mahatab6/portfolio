@@ -1,69 +1,124 @@
-import React from "react";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiFirebase, SiMongodb, SiVite, SiExpress } from "react-icons/si";
-import { PiBracketsCurlyDuotone } from "react-icons/pi";
+import { 
+  FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode, FaGithub, FaStripe 
+} from "react-icons/fa";
+import { 
+  SiTailwindcss, SiFirebase, SiMongodb, SiVite, SiExpress, 
+  SiRedux, SiReactquery, SiSupabase, SiNextdotjs, SiPrisma, 
+  SiPostgresql, SiJsonwebtokens 
+} from "react-icons/si";
+import { TbBrandAuth0 } from "react-icons/tb";
 
 const skills = [
+  // FRONT-END
   {
     icon: <FaHtml5 size={50} className="text-orange-500" />,
     title: "HTML",
     description: "Semantic structure and layout foundation.",
+    category: "Frontend"
   },
   {
     icon: <FaCss3Alt size={50} className="text-blue-500" />,
     title: "CSS",
     description: "Custom design and styling of websites.",
+    category: "Frontend"
   },
   {
     icon: <SiTailwindcss size={50} className="text-cyan-400" />,
-    title: "TailwindCSS",
+    title: "Tailwind CSS",
     description: "Utility-first framework for fast UI building.",
+    category: "Frontend"
   },
   {
     icon: <FaJs size={50} className="text-yellow-400" />,
     title: "JavaScript",
     description: "Core scripting language for interactivity.",
+    category: "Frontend"
   },
   {
     icon: <FaReact size={50} className="text-blue-400" />,
-    title: "React",
+    title: "React.js",
     description: "Component-based UI development.",
+    category: "Frontend"
   },
   {
-    icon: <SiFirebase size={50} className="text-yellow-500" />,
-    title: "Firebase",
-    description: "Authentication and real-time database.",
+    icon: <SiRedux size={50} className="text-purple-500" />,
+    title: "Redux RTK",
+    description: "Advanced state management and logic.",
+    category: "Frontend"
   },
+  {
+    icon: <SiReactquery size={50} className="text-rose-500" />,
+    title: "React Query",
+    description: "Server-state management and data fetching.",
+    category: "Frontend"
+  },
+  {
+    icon: <SiNextdotjs size={50} className="text-white" />,
+    title: "Next.js",
+    description: "Full-stack React framework for production.",
+    category: "Frontend"
+  },
+  // BACK-END & DB
   {
     icon: <FaNode size={50} className="text-green-500" />,
     title: "Node.js",
     description: "JavaScript runtime for backend development.",
+    category: "Backend"
   },
   {
-    icon: <SiExpress size={50} className="text-white" />,
+    icon: <SiExpress size={50} className="text-gray-400" />,
     title: "Express.js",
     description: "Fast backend web application framework.",
+    category: "Backend"
   },
   {
     icon: <SiMongodb size={50} className="text-green-600" />,
     title: "MongoDB",
-    description: "NoSQL database for storing JSON-like data.",
+    description: "NoSQL database for flexible data storage.",
+    category: "Database"
   },
   {
-    icon: <SiVite size={50} className="text-purple-500" />,
-    title: "Vite",
-    description: "Fast development server and bundler.",
+    icon: <SiPostgresql size={50} className="text-blue-600" />,
+    title: "PostgreSQL",
+    description: "Powerful open-source relational database.",
+    category: "Database"
   },
   {
-    icon: <PiBracketsCurlyDuotone size={50} className="text-rose-400" />,
-    title: "Shadcn/UI",
-    description: "Beautiful UI components for React.",
+    icon: <SiPrisma size={50} className="text-white" />,
+    title: "Prisma ORM",
+    description: "Next-generation Node.js and TypeScript ORM.",
+    category: "Backend"
   },
   {
-    icon: <FaGithub size={50} className="text-white" />,
-    title: "Git & GitHub",
-    description: "Version control and collaboration.",
+    icon: <SiFirebase size={50} className="text-yellow-500" />,
+    title: "Firebase",
+    description: "Authentication and real-time cloud services.",
+    category: "Backend"
   },
+  {
+    icon: <SiSupabase size={50} className="text-emerald-500" />,
+    title: "Supabase",
+    description: "The open source Firebase alternative.",
+    category: "Backend"
+  },
+  {
+    icon: <SiJsonwebtokens size={50} className="text-pink-500" />,
+    title: "JWT",
+    description: "Secure data transmission using JSON tokens.",
+    category: "Auth"
+  },
+  {
+    icon: <TbBrandAuth0 size={50} className="text-orange-400" />,
+    title: "Better-Auth",
+    description: "Comprehensive authentication for modern apps.",
+    category: "Auth"
+  },
+  {
+    icon: <FaStripe size={50} className="text-indigo-500" />,
+    title: "Stripe",
+    description: "Payment processing integration and management.",
+    category: "Backend"
+  }
 ];
 
 const SkillsGrid = () => {
