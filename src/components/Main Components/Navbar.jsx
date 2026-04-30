@@ -67,7 +67,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <Link
                     download
-                    to="https://drive.google.com/file/d/1zEcNjNKyTWByo9u5RQ6EWF4b-MMiHl4U/view"
+                    to="https://drive.google.com/file/d/1WhQDp8-YrDlqt5vB06cBHCEt0_kewkfZ/view?usp=sharing"
                     target="_blank"
                     className="rounded-md border border-[#00B477] btn bg-base-100  hover:bg-[#00B477]"
                     ><FaArrowDown />
