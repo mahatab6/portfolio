@@ -1,145 +1,113 @@
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaNode, FaGithub, FaStripe 
 } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
 import { 
-  SiTailwindcss, SiFirebase, SiMongodb, SiVite, SiExpress, 
+  SiTailwindcss, SiFirebase, SiMongodb, SiExpress, 
   SiRedux, SiReactquery, SiSupabase, SiNextdotjs, SiPrisma, 
   SiPostgresql, SiJsonwebtokens 
 } from "react-icons/si";
 import { TbBrandAuth0 } from "react-icons/tb";
 
 const skills = [
-  // FRONT-END
-  {
-    icon: <FaHtml5 size={50} className="text-orange-500" />,
-    title: "HTML",
-    description: "Semantic structure and layout foundation.",
-    category: "Frontend"
-  },
-  {
-    icon: <FaCss3Alt size={50} className="text-blue-500" />,
-    title: "CSS",
-    description: "Custom design and styling of websites.",
-    category: "Frontend"
-  },
-  {
-    icon: <SiTailwindcss size={50} className="text-cyan-400" />,
-    title: "Tailwind CSS",
-    description: "Utility-first framework for fast UI building.",
-    category: "Frontend"
-  },
-  {
-    icon: <FaJs size={50} className="text-yellow-400" />,
-    title: "JavaScript",
-    description: "Core scripting language for interactivity.",
-    category: "Frontend"
-  },
-  {
-    icon: <FaReact size={50} className="text-blue-400" />,
-    title: "React.js",
-    description: "Component-based UI development.",
-    category: "Frontend"
-  },
-  {
-    icon: <SiRedux size={50} className="text-purple-500" />,
-    title: "Redux RTK",
-    description: "Advanced state management and logic.",
-    category: "Frontend"
-  },
-  {
-    icon: <SiReactquery size={50} className="text-rose-500" />,
-    title: "React Query",
-    description: "Server-state management and data fetching.",
-    category: "Frontend"
-  },
-  {
-    icon: <SiNextdotjs size={50} className="text-white" />,
-    title: "Next.js",
-    description: "Full-stack React framework for production.",
-    category: "Frontend"
-  },
-  // BACK-END & DB
-  {
-    icon: <FaNode size={50} className="text-green-500" />,
-    title: "Node.js",
-    description: "JavaScript runtime for backend development.",
-    category: "Backend"
-  },
-  {
-    icon: <SiExpress size={50} className="text-gray-400" />,
-    title: "Express.js",
-    description: "Fast backend web application framework.",
-    category: "Backend"
-  },
-  {
-    icon: <SiMongodb size={50} className="text-green-600" />,
-    title: "MongoDB",
-    description: "NoSQL database for flexible data storage.",
-    category: "Database"
-  },
-  {
-    icon: <SiPostgresql size={50} className="text-blue-600" />,
-    title: "PostgreSQL",
-    description: "Powerful open-source relational database.",
-    category: "Database"
-  },
-  {
-    icon: <SiPrisma size={50} className="text-white" />,
-    title: "Prisma ORM",
-    description: "Next-generation Node.js and TypeScript ORM.",
-    category: "Backend"
-  },
-  {
-    icon: <SiFirebase size={50} className="text-yellow-500" />,
-    title: "Firebase",
-    description: "Authentication and real-time cloud services.",
-    category: "Backend"
-  },
-  {
-    icon: <SiSupabase size={50} className="text-emerald-500" />,
-    title: "Supabase",
-    description: "The open source Firebase alternative.",
-    category: "Backend"
-  },
-  {
-    icon: <SiJsonwebtokens size={50} className="text-pink-500" />,
-    title: "JWT",
-    description: "Secure data transmission using JSON tokens.",
-    category: "Auth"
-  },
-  {
-    icon: <TbBrandAuth0 size={50} className="text-orange-400" />,
-    title: "Better-Auth",
-    description: "Comprehensive authentication for modern apps.",
-    category: "Auth"
-  },
-  {
-    icon: <FaStripe size={50} className="text-indigo-500" />,
-    title: "Stripe",
-    description: "Payment processing integration and management.",
-    category: "Backend"
-  }
+  { icon: <FaHtml5 />, color: "text-orange-500", name: "HTML" },
+  { icon: <FaCss3Alt />, color: "text-blue-500", name: "CSS" },
+  { icon: <SiTailwindcss />, color: "text-cyan-400", name: "Tailwind" },
+  { icon: <FaJs />, color: "text-yellow-400", name: "JavaScript" },
+  { icon: <FaReact />, color: "text-blue-400", name: "React" },
+  { icon: <SiNextdotjs />, color: "text-white", name: "Next.js" },
+  { icon: <SiRedux />, color: "text-purple-500", name: "Redux" },
+  { icon: <SiReactquery />, color: "text-rose-500", name: "React Query" },
+  { icon: <FaNode />, color: "text-green-500", name: "Node.js" },
+  { icon: <SiExpress />, color: "text-gray-400", name: "Express" },
+  { icon: <SiMongodb />, color: "text-green-600", name: "MongoDB" },
+  { icon: <SiPostgresql />, color: "text-blue-600", name: "PostgreSQL" },
+  { icon: <SiPrisma />, color: "text-white", name: "Prisma" },
+  { icon: <SiFirebase />, color: "text-yellow-500", name: "Firebase" },
+  { icon: <SiSupabase />, color: "text-emerald-500", name: "Supabase" },
+  { icon: <SiJsonwebtokens />, color: "text-pink-500", name: "JWT" },
+  { icon: <TbBrandAuth0 />, color: "text-orange-400", name: "Better-Auth" },
+  { icon: <FaStripe />, color: "text-indigo-500", name: "Stripe" },
+  { icon: <FaGithub />, color: "text-white", name: "GitHub" },
 ];
 
 const SkillsGrid = () => {
-  return (
-    <div className="py-10 px-5 bg-[#060407] min-h-screen">
+  const gridRef = useRef(null);
 
-      <h1 className="text-4xl font-bold text-green-400 text-center py-10">My Skills</h1>
-      
-      <div className="w-9/12 mx-auto lg:py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="bg-[#1E293B] hover:shadow-2xl p-5 text-center space-y-2 w-full rounded-2xl border-2 border-transparent hover:border-blue-500 transition duration-300"
-          >
-            <div className="flex justify-center">{skill.icon}</div>
-            <h2 className="text-xl font-bold text-white">{skill.title}</h2>
-            <p className="text-gray-300 text-sm">{skill.description}</p>
-          </div>
-        ))}
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Entrance Animation: Staggered Fade-in & Scale-up
+      gsap.from(".skill-card", {
+        y: 50,
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: "top 80%",
+        },
+      });
+
+      // Continuous Floating Animation
+      gsap.to(".skill-card", {
+        y: -10,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        stagger: {
+          each: 0.1,
+          from: "random",
+        },
+      });
+    }, gridRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section id="skill-section" className="py-24 bg-[#070707] relative overflow-hidden" ref={gridRef}>
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00B477]/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+      <div className="w-11/12 md:w-9/12 mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl text-white font-bold inline-block relative">
+            Technical <span className="text-[#00B477]">Arsenal</span>
+            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#00B477] rounded-full"></span>
+          </h2>
+          <p className="text-gray-400 mt-6 max-w-xl mx-auto">
+            The modern technologies I use to bring ideas to life.
+          </p>
+        </div>
+
+        {/* Grid Container */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-8 justify-items-center">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="skill-card group relative flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-2xl bg-white/5 border border-white/10 transition-all duration-300 hover:bg-[#00B477]/10 hover:border-[#00B477]/50"
+            >
+              {/* Tooltip on Hover */}
+              <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-all duration-300 bg-[#00B477] text-black text-xs font-bold px-2 py-1 rounded">
+                {skill.name}
+              </span>
+
+              {/* Logo */}
+              <div className={`text-4xl md:text-5xl ${skill.color} transition-transform duration-300 group-hover:scale-110`}>
+                {skill.icon}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
